@@ -42,7 +42,7 @@ namespace Lab_7
             Button button = (Button)sender;
             operador = button.Text;
             result_value = double.Parse(textBox_Result.Text);
-            CurrentOperator.Text = result_value + " " + operation;
+            CurrentOperator.Text = result_value + " " + operador;
             operation = true;
         }
 
@@ -50,11 +50,13 @@ namespace Lab_7
         {
             textBox_Result.Text = "0";
             result_value = 0;
+            CurrentOperator.Text = "";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             textBox_Result.Text = "0";
+            
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -70,9 +72,10 @@ namespace Lab_7
                     textBox_Result.Text = (result_value - double.Parse(textBox_Result.Text)).ToString();
                     break;
                 case "/":
-
                     textBox_Result.Text = (result_value / double.Parse(textBox_Result.Text)).ToString();
+                    
                     break;
+
                 case "*":
 
                     textBox_Result.Text = (result_value * double.Parse(textBox_Result.Text)).ToString();
@@ -81,5 +84,6 @@ namespace Lab_7
                     break;
             }
         }
+
     }
 }
